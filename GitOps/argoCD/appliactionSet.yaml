@@ -21,7 +21,7 @@ spec:
         path: '{{path}}'                                 # Path of each folder
       destination:
         server: https://kubernetes.default.svc
-        namespace: default
+        namespace: dev
       syncPolicy:
         automated: {}                                    # Auto-sync enabled
         retry:
