@@ -6,14 +6,10 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git  # public repo
-        revision: main
+        repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git
+        revision: HEAD
         directories:
-          - path: GitOps/db-infra                                     # first folder in repo
-          - path: GitOps/redis-infra                          # second folder in repo
-          - path: GitOps/result-infra 
-          - path: GitOps/vote-infra 
-          - path: GitOps/worker-infra                       # third folder in repo
+          - path: GitOps/env/dev/*                      # third folder in repo
   template:
     metadata:
       name: '{{path.basename}}'                         # Application name = folder name

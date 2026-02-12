@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: vote
-  name: vote
+    app: result
+  name: result
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: vote
+      app: result
   template:
     metadata:
       labels:
-        app: vote
+        app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote
-        name: vote
+      - image: aryanatel/tourlyresult
+        name: result
         ports:
         - containerPort: 80
-          name: vote
+          name: result
