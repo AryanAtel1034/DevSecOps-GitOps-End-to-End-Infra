@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: voting-appset
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git  # public repo
+        revision: main
+        directories:
+          - path: GitOps/db-infra                                     # first folder in repo
+          - path: GitOps/redis-infra                          # second folder in repo
+          - path: GitOps/result-infra 
+          - path: GitOps/vote-infra 
+          - path: GitOps/worker-infra                       # third folder in repo
+  template:
+    metadata:
+      name: '{{path.basename}}'                         # Application name = folder name
+    spec:
+      project: voting-project                       # Reference the AppProject we created
+      source:
+        repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git
+        targetRevision: main
+        path: '{{path}}'                                 # Path of each folder
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated: {}                                    # Auto-sync enabled
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m

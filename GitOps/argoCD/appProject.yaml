@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: voting-project
+  namespace: argocd
+spec:
+  description: "Project for all public GitHub applications"
+  sourceRepos:
+    - "https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git"   # Allow all repos under this org
+  destinations:
+    - namespace: "*"                      # Allow deployment to any namespace
+      server: "*"                         # Allow deployment to any cluster
+  clusterResourceWhitelist:
+    - group: "*"                           # Allow all cluster-level resources
+      kind: "*"                            # Allow all kinds
+  namespaceResourceBlacklist: []           # No restrictions on namespace resources
+  roles:
+    - name: admin
+      description: "Admin role for this project"
+      policies:
+        - "p, proj:public-apps-project:admin, applications, *, */*, allow"
+      groups: ["admin"]                    # Optional: assign to an RBAC group
