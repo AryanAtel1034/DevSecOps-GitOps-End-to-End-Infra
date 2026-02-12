@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git
-        revision: HEAD
+        revision: main
         directories:
           - path: GitOps/env/dev/*                      # third folder in repo
   template:
