@@ -5,6 +5,7 @@ resources:
   - ../../../base/worker-infra
 
 namespace: dev
+nameSuffix: -dev
 images:
 - name: aryanatel/tourlyworker
   newTag: v15
