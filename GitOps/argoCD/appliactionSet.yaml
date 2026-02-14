@@ -9,7 +9,8 @@ spec:
         repoURL: https://github.com/AryanAtel1034/DevSecOps-GitOps-End-to-End-Infra.git
         revision: main
         directories:
-          - path: GitOps/env/dev/*                      # third folder in repo
+          - path: GitOps/env/dev/*   
+          - path: GitOps/env/prod/*                   # third folder in repo
   template:
     metadata:
       name: '{{path.basename}}'                         # Application name = folder name
