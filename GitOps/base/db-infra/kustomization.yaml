@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
   - db-deployment.yaml
-  - db-secrete.yaml
+  - db-secret.yaml
   - db-service.yaml
