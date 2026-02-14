@@ -23,7 +23,9 @@ spec:
         server: https://kubernetes.default.svc
         namespace: dev
       syncPolicy:
-        automated: {}                                    # Auto-sync enabled
+        automated: {}   
+        syncOptions:
+          - CreateNamespace=true     # Auto-sync enabled
         retry:
           limit: 5
           backoff:
