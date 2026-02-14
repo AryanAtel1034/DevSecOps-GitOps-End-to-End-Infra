@@ -5,5 +5,4 @@ resources:
   - db-deployment.yaml
   - db-secret.yaml
   - db-service.yaml
-  
-nameSuffix: -dev
+

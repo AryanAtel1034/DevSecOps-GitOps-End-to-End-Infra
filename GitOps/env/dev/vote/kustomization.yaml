@@ -5,6 +5,7 @@ resources:
   - ../../../base/vote-infra
 
 namespace: dev
+nameSuffix: -dev
 images:
 - name: aryanatel/tourlyvote
   newTag: v15

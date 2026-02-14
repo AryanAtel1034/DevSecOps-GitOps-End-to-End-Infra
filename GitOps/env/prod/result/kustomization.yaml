@@ -4,8 +4,8 @@ kind: Kustomization
 resources:
   - ../../../base/result-infra
 
-namespace: dev
-nameSuffix: -dev
+namespace: prod
+nameSuffix: -prod
 images:
 - name: aryanatel/tourlyresult
   newTag: v15
