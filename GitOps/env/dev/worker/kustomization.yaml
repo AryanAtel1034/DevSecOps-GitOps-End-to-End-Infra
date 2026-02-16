@@ -6,4 +6,4 @@ namespace: dev
 nameSuffix: -dev
 images:
   - name: aryanatel/tourlyworker
-    newTag: v32
+    newTag: v33
