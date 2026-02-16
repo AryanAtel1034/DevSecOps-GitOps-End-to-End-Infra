@@ -13,7 +13,7 @@ spec:
           - path: GitOps/env/prod/*                   # third folder in repo
   template:
     metadata:
-      name: '{{path.basename}}'                         # Application name = folder name
+      name: '{{path[2]}}-{{path.basename}}'                        # Application name = folder name
     spec:
       project: voting-project                       # Reference the AppProject we created
       source:
@@ -22,7 +22,7 @@ spec:
         path: '{{path}}'                                 # Path of each folder
       destination:
         server: https://kubernetes.default.svc
-        namespace: dev
+        namespace: '{{path[2]}}'
       syncPolicy:
         automated: {}   
         syncOptions:
