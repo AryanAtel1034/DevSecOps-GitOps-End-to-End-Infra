@@ -6,4 +6,4 @@ namespace: dev
 nameSuffix: -dev
 images:
   - name: aryanatel/tourlyvote
-    newTag: v22
+    newTag: v32
